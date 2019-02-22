@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"net/http"
 	"os"
 	"time"
 )
@@ -48,5 +49,8 @@ func checkDir(){
 }
 
 func main() {
+
 	checkDir()
+	http.ListenAndServe(":3001", nil)
+
 }

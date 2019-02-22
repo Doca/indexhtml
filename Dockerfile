@@ -10,5 +10,6 @@ MAINTAINER 	Dorian Cantzen <cantzen@extrument.com>
 ADD index.html /mountready
 COPY --from=build /src/go-filechecker /usr/local/bin/go-filechecker
 RUN chmod +x /usr/local/bin/go-filechecker
+CMD ["go-filechecker"]
 RUN apk add curl
 
