@@ -44,6 +44,7 @@ func checkDir(){
 			fmt.Println("Other")
 		}
 	}
+	copyFile()
 }
 
 func main() {
