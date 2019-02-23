@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"io"
-	"net/http"
 	"os"
 	"time"
 )
@@ -20,7 +19,7 @@ func copyFile(){
 	check(err)
 	defer destFile.Close()
 
-	_, err = io.Copy(destFile, srcFile) // check first var for number of bytes copied
+	_, err = io.Copy(destFile, srcFile)
 	check(err)
 
 	err = destFile.Sync()
@@ -41,16 +40,12 @@ func checkDir(){
 			fmt.Println("Waiting...")
 			delaySecond(10)
 
-		} else {
-			fmt.Println("Other")
 		}
 	}
 	copyFile()
 }
 
 func main() {
-
 	checkDir()
-	http.ListenAndServe(":3001", nil)
 
 }
